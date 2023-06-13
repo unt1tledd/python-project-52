@@ -142,6 +142,18 @@ files = [
 cli = ["click (>=5.0)"]
 
 [[package]]
+name = "railway"
+version = "0.0.4"
+description = "Infrastructure, Instantly"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "railway-0.0.4-py3-none-any.whl", hash = "sha256:7e42035494bf107bee9a81a6ccb8f7cd288a59423309a02f737b6c38a9edd964"},
+    {file = "railway-0.0.4.tar.gz", hash = "sha256:b45aab1b360c7648d5d1993618d118f918c9cfe18f8a31d86a59b81c9439bb41"},
+]
+
+[[package]]
 name = "setuptools"
 version = "67.8.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
@@ -202,4 +214,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "e8b5bcb1a0be09ffc42d625f6493750ad1f8bee9e644e5c82220baf894edbf9f"
+content-hash = "afdca1bd05ff91fb23b99e0b094948fb8d47507d357cba347aeb71b6f0b461ec"
