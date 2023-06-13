@@ -6,12 +6,12 @@ authors = ["Софья Григорович <sonyashkin@icloud.com>"]
 readme = "README.md"
 packages = [{include = "task_manager"}]
 classifiers = [
-"Programming Language :: Python :: 3.11",
+"Programming Language :: Python :: 3.10",
 "Framework :: Django :: 4.2.2",
 "Environment :: Web Environment"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 django = "^4.2.2"
 gunicorn = "^20.1.0"
 python-dotenv = "^1.0.0"
