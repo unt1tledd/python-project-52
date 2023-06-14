@@ -1,10 +1,8 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
-<main role="main" class="container">
-  <div class="jumbotron">
-    <h1>Привет от Хекслет</h1>
-    <p class="lead">Практические курсы по программированию</p>
-    <a class="btn btn-lg btn-primary" href="https://ru.hexlet.io" role="button">Узнать больше &raquo;</a>
-  </div>
-</main>
+<div class="display-4">{% trans "Hi from Hexlet!" %}</div>
+<p class="lead">{% trans "Practical programming courses" %}</p>
+<hr>
+<a class="btn btn-primary btn-lg" href="https://ru.hexlet.io">{% trans "learn more"%}</a>
 {% endblock %}

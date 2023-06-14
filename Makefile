@@ -1,6 +1,6 @@
 PORT ?= 8000
 start:
-	python3 manage.py runserver 0.0.0.0:$(PORT)
+	python3 manage.py runserver
 
 install:
 	poetry install
@@ -10,3 +10,9 @@ build:
 
 lint:
 	poetry run flake8
+
+migrate:
+	python3 manage.py migrate
+
+migrations:
+	python3 manage.py makemigrations

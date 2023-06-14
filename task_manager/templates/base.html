@@ -1,16 +1,15 @@
 <!doctype html>
-{% load bootstrap5 %}
+{% load bootstrap4 %}
 {% bootstrap_css %}
-<html lang="en">
+{% load i18n %}
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>Менеджер Задач</title>
+    <title>{% translate "Task Manager" %}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-static/">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-fixed/">
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -30,43 +29,42 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="navbar-top-fixed.css" rel="stylesheet">
+    
+    <link href="navbar-top.css" rel="stylesheet">
   </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Менеджер задач</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Пользователи <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Вход</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Регистрация</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-    <main class="flex-grow-1">
-       <div class="container-lg mt-3">
-
-           {% block content %}{% endblock %}
-
-       </div>
-    </main>
-
-<main role="main" class="container">
-  <div class="jumbotron">
-    <h1>Привет от Хекслет</h1>
-    <p class="lead">Практические курсы по программированию</p>
-    <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">Узнать больше &raquo;</a>
-  </div>
-</main>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <body  class="d-flex flex-column min-vh-100">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+          <a class="navbar-brand" href="#">{% translate "Task Manager" %}</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">{% trans "Users" %}<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">{% trans "Login" %}</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{% trans "Registration" %}</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      
+      <main role="main" class="container">
+          <div class="jumbotron">
+              {% block content %}
+              {% endblock %}
+          </div>
+      </main>
+      <footer>
+        <div class="container my-5 pt-4 border-top">
+            <a target="_blank" href="https://ru.hexlet.io">Hexlet</a>
+        </div>
+        </footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
