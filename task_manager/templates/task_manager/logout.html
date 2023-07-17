@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    <div class="alert alert-success" role="alert">
+        <h2 style="text-align: top;">{% translate 'You are logged out' %}</h2>
+    </div>
+
+    <h3>{% translate Login again? %}</h3>
+    <a href="{% url 'login' %}">---> {% translate 'Login' %}</a> <br>
+    <a href="{% url 'home' %}"><--- Or go back to home.</a>
+{% endblock content %}

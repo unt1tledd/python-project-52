@@ -16,7 +16,6 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-DATABASE_URL = os.getenv('DATABASE')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
+    'task_manager.users',
     'bootstrap4',
 ]
 
@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'task_manager.urls'
 
@@ -83,6 +84,10 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+
+DATABASE_URL = os.getenv('DATABASE_URL')
+
 
 DATABASES = {
     'default': {
@@ -120,7 +125,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -134,3 +139,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL =  '/'
+LOGOUT_REDIRECT_URL = '/'
+AUTH_USER_MODEL = 'users.CustomUser'

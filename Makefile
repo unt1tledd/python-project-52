@@ -1,6 +1,6 @@
 PORT ?= 8000
 start:
-	python3 manage.py runserver 0.0.0.0:$(PORT)
+	python3 manage.py runserver
 
 install:
 	poetry install
