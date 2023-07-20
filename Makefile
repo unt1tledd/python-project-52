@@ -16,3 +16,6 @@ migrate:
 
 migrations:
 	python3 manage.py makemigrations
+
+test:
+	 poetry run python manage.py test

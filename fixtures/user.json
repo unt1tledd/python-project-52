@@ -1,0 +1,22 @@
+[
+    {
+        "model": "users.CustomUser",
+        "pk": 1,
+        "fields": {
+            "first_name": "Senya",
+            "last_name": "Pesikov",
+            "username": "_senya_",
+            "password": "senya1234"
+        }
+    },
+    {
+        "model": "users.CustomUser",
+        "pk": 2,
+        "fields": {
+            "first_name": "Tom",
+            "last_name": "Brown",
+            "username": "tbrown",
+            "password": "bbb1234"
+        }
+    }
+]
