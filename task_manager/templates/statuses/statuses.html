@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block content %}
     <h1  class="my-4" align='center'>{% translate 'Statuses' %}</h1>
-    <a href="{% url 'create' %}"><font color='darkblue' size='5'>{% translate 'Create Status' %}</font></a>
+    <a href="{% url 'create_status' %}"><font color='darkblue' size='5'>{% translate 'Create Status' %}</font></a>
     <table class="table table-striped">
         <thead class='table-info'>
             <tr>
@@ -20,9 +20,9 @@
                 <td>{{ status.name }}</td>
                 <td></td>
                 <td>{{ status.created_at }}</td>
-                <td><a href="{% url 'update' status.id %}">{% translate 'Update' %}</a>
+                <td><a href="{% url 'update_status' status.id %}">{% translate 'Update' %}</a>
                     <br>
-                    <a href="{% url 'delete' status.id %}">{% translate 'Delete' %}</a>
+                    <a href="{% url 'delete_status' status.id %}">{% translate 'Delete' %}</a>
                 </td>
             </tr>
             {% endfor %}

@@ -35,16 +35,4 @@ class DeleteStatusView(SuccessMessageMixin, DeleteView):
     template_name = 'statuses/delete.html'
     success_url = reverse_lazy('statuses')
     success_message = _('Status successfully deleted')
-        
-    def get(self, request, *args, **kwargs):
-        status_id = self.kwargs['pk']
-        status = Status.objects.get(id=status_id)
-        return render(request, 'statuses/delete.html', {'status': status})
-    
-    def post(self, request, *args, **kwargs):
-        status_id = self.kwargs['pk']
-        status = Status.objects.get(id=status_id)
-        if status:
-            status.delete()
-            return redirect(self.success_url)
-        return super().post(request, *args, **kwargs)
+

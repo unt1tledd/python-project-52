@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    <h1  class="my-4" align='center'>{% translate 'Tasks' %}</h1>
+    <a href="{% url 'create_task' %}"><font color='darkblue' size='5'>{% translate 'Create Task' %}</font></a>
+    <br>
+    <div class="card mb-3">
+        <div class="card-body bg-light">
+            <h3>{% trans 'Find task' %}</h3>
+            <form method="get" class="form-check">
+                {% bootstrap_form filter.form %}
+                <input class="btn btn-primary" type="submit" value="{% trans 'show' %}">
+            </form>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class='table-info'>
+            <tr>
+             <th>ID</th>
+             <th>{% translate 'Name' %}</th>
+             <th>{% translate 'Status' %}</th>
+             <th>{% translate 'Author' %}</th>
+             <th>{% translate 'Executor' %}</th>
+             <th>{% translate 'Date of creation' %}</th>
+             <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td><a href="{% url 'task' task.id %}">{{ task.name }}</a></td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.author }}</td>
+                <td>{{ task.executor }}</td>
+                <td>{{ task.created_at }}</td>
+                <td><a href="{% url 'update_task' task.id %}">{% translate 'Update' %}</a>
+                    <br>
+                    <a href="{% url 'delete_task' task.id %}">{% translate 'Delete' %}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
