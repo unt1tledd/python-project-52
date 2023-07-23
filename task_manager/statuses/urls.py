@@ -8,4 +8,3 @@ urlpatterns = [
     path('<int:pk>/update', views.UpdateStatusView.as_view(), name='update_status'),
     path('<int:pk>/delete', views.DeleteStatusView.as_view(), name='delete_status'),
 ]
-

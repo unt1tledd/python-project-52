@@ -32,6 +32,16 @@
         <div class="col">{% translate 'Description' %}</div>
         <div class="col">{{ task.description }}</div>
       </div>
+      <div class="row p-1">
+        <div class="col">
+            <h6>{% translate 'Labels:' %}</h6>
+            <ul>
+                {% for label in task.labels.all %}
+                <li>{{ label.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+      </div>
       <div class="row p-2">
         <div class="col">
           <a href="{% url 'update_task' task.id %}">{% trans 'Update' %}</a>

@@ -8,6 +8,7 @@ from task_manager.tasks.filter import TaskFilter
 from task_manager.tasks.forms import TaskForm
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.utils.translation import gettext_lazy as _
+from task_manager.right_user import NewLoginRequiredMixin, TaskPassesTestMixin
 
 
 class TaskListView(FilterView):
@@ -17,7 +18,7 @@ class TaskListView(FilterView):
     context_object_name = 'tasks'
 
 
-class CreateTaskView(SuccessMessageMixin, CreateView):
+class CreateTaskView(TaskPassesTestMixin, SuccessMessageMixin, CreateView, NewLoginRequiredMixin):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/create.html'
@@ -29,7 +30,7 @@ class CreateTaskView(SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class UpdateTaskView(SuccessMessageMixin, UpdateView):
+class UpdateTaskView(TaskPassesTestMixin, SuccessMessageMixin, UpdateView, NewLoginRequiredMixin):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/update.html'
@@ -37,7 +38,7 @@ class UpdateTaskView(SuccessMessageMixin, UpdateView):
     success_message = _('Task successfully updated')
 
 
-class DeleteTaskView(SuccessMessageMixin, DeleteView):
+class DeleteTaskView(SuccessMessageMixin, DeleteView, NewLoginRequiredMixin):
     model = Task
     template_name = 'tasks/delete.html'
     success_url = reverse_lazy('tasks')
