@@ -10,12 +10,19 @@ build:
 
 lint:
 	poetry run flake8
+	
+MANAGE := poetry run python manage.py
 
 migrate:
-	python3 manage.py migrate
+	 @$(MANAGE) migrate
 
 migrations:
-	python3 manage.py makemigrations
+	@$(MANAGE) makemigrations
 
 test:
 	 poetry run python manage.py test
+
+install: .env
+	@poetry install
+
+build: install migrate
