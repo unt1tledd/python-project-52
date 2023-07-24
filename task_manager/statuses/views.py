@@ -14,7 +14,7 @@ def index(request):
     return render(request, 'statuses/statuses.html', {'statuses': statuses})
 
 
-class CreateStatusView(SuccessMessageMixin, CreateView, NewLoginRequiredMixin):
+class CreateStatusView(NewLoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/create.html'
@@ -22,7 +22,7 @@ class CreateStatusView(SuccessMessageMixin, CreateView, NewLoginRequiredMixin):
     success_message = _('Status successfully created')
 
 
-class UpdateStatusView(SuccessMessageMixin, UpdateView, NewLoginRequiredMixin):
+class UpdateStatusView(NewLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/update.html'
@@ -31,7 +31,7 @@ class UpdateStatusView(SuccessMessageMixin, UpdateView, NewLoginRequiredMixin):
     
 
 
-class DeleteStatusView(SuccessMessageMixin, DeleteView, NewLoginRequiredMixin):
+class DeleteStatusView(NewLoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Status
     template_name = 'statuses/delete.html'
     success_url = reverse_lazy('statuses')

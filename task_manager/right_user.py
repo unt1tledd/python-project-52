@@ -29,5 +29,5 @@ class TaskPassesTestMixin(UserPassesTestMixin):
 
     def handle_no_permission(self):
         url = reverse_lazy('tasks')
-        messages.error(self.request, _("A task can only be deleted and updated by its author."))
+        messages.error(self.request, _("A task can only be deleted by its author."))
         return redirect(url)

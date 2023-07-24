@@ -18,7 +18,7 @@ class TaskListView(FilterView):
     context_object_name = 'tasks'
 
 
-class CreateTaskView(TaskPassesTestMixin, SuccessMessageMixin, CreateView, NewLoginRequiredMixin):
+class CreateTaskView(NewLoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/create.html'
@@ -30,7 +30,7 @@ class CreateTaskView(TaskPassesTestMixin, SuccessMessageMixin, CreateView, NewLo
         return super().form_valid(form)
 
 
-class UpdateTaskView(TaskPassesTestMixin, SuccessMessageMixin, UpdateView, NewLoginRequiredMixin):
+class UpdateTaskView(NewLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/update.html'
@@ -38,7 +38,7 @@ class UpdateTaskView(TaskPassesTestMixin, SuccessMessageMixin, UpdateView, NewLo
     success_message = _('Task successfully updated')
 
 
-class DeleteTaskView(SuccessMessageMixin, DeleteView, NewLoginRequiredMixin):
+class DeleteTaskView(TaskPassesTestMixin, NewLoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Task
     template_name = 'tasks/delete.html'
     success_url = reverse_lazy('tasks')
