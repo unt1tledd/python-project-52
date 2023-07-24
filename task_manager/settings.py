@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
+import rollbar
 
 
 load_dotenv()
@@ -119,6 +121,14 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+ROLLBAR = {
+    'access_token': os.environ.get('ROLLBAR_ACCESS_TOKEN',),
+    'environment': 'production',
+    'code_version': '1.0'
+    'root': BASE_DIR,
+}
 
 
 # Internationalization
