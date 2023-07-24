@@ -22,7 +22,7 @@ migrations:
 test:
 	 poetry run python manage.py test
 
-install:
+install: .env
 	@poetry install
 
 build: install migrate

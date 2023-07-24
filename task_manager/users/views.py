@@ -29,7 +29,7 @@ class UserListView(ListView):
                      }
 
 
-class UpdateUserView(SuccessMessageMixin, UpdateView, NewLoginRequiredMixin, UserPermissionMixin):
+class UpdateUserView(UserPermissionMixin, NewLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = CustomUser
     form_class = CustomUserCreationForm
     template_name = 'users/update.html'
@@ -37,7 +37,7 @@ class UpdateUserView(SuccessMessageMixin, UpdateView, NewLoginRequiredMixin, Use
     success_message = _('User successfully updated')
 
 
-class DeleteUserView(SuccessMessageMixin, DeleteView, NewLoginRequiredMixin, UserPermissionMixin):
+class DeleteUserView(UserPermissionMixin, NewLoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = CustomUser
     template_name = 'users/delete.html'
     success_url = reverse_lazy('users')

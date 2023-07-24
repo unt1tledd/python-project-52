@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 class NewLoginRequiredMixin(LoginRequiredMixin):
     def handle_no_permission(self):
-        messages.error(self.request, _('You are not authorized! Please sign in >:('))
+        messages.error(self.request, _("You are not authorized! Please sign in >:("))
         url = reverse_lazy('login')
         return redirect(url)
 
@@ -18,8 +18,8 @@ class UserPermissionMixin(UserPassesTestMixin):
         return self.request.user.id == user.id
 
     def handle_no_permission(self):
-        messages.error(self.request, _('You do not have permissions to change another user.'))
         url = reverse_lazy('users')
+        messages.error(self.request, _("You don't have permissions to update and delete another user"))
         return redirect(url)
     
 
@@ -29,5 +29,5 @@ class TaskPassesTestMixin(UserPassesTestMixin):
 
     def handle_no_permission(self):
         url = reverse_lazy('tasks')
-        messages.error(self.request, _('A task can only be deleted by its author.'))
+        messages.error(self.request, _("A task can only be deleted and updated by its author."))
         return redirect(url)
