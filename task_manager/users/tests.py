@@ -9,11 +9,11 @@ from django.utils.translation import gettext_lazy as _
 
 
 class TestUser(TestCase):
-    fixtures = ['user.json']
+    fixtures = ['users.json']
 
     def setUp(self):
         self.client = Client()
-        self.register = reverse_lazy('register')
+        self.create = reverse_lazy('create')
         self.users = reverse_lazy('users')
         self.login = reverse_lazy('login')
         self.user1 = get_user_model().objects.get(pk=1)
@@ -25,12 +25,12 @@ class TestUser(TestCase):
         with open(os.path.join('fixtures', 'test_user.json')) as f:
             self.test_user = json.load(f)
 
-    def test_register(self):
-        response = self.client.get(self.register)
+    def test_create(self):
+        response = self.client.get(self.create)
         self.assertEqual(response.status_code, 200)
 
     def test_create_user(self):
-        response = self.client.post(path=self.register, data=self.test_user)
+        response = self.client.post(path=self.create, data=self.test_user)
         self.assertRedirects(response, self.login, 302)
         self.user = get_user_model().objects.get(pk=3)
         self.assertEqual(first=self.user.username, second=self.test_user.get('username'))

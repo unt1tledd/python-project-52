@@ -28,4 +28,6 @@ install:
 build: install migrate
 
 test-coverage:
-	poetry run pytest --cov=gendiff --cov-report xml
+	poetry run coverage run --source='.' manage.py test
+	poetry run coverage report
+	poetry run coverage xml
