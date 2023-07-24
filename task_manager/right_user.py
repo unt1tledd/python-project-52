@@ -21,7 +21,7 @@ class UserPermissionMixin(UserPassesTestMixin):
         url = reverse_lazy('users')
         messages.error(self.request, _("You don't have permissions to update and delete another user"))
         return redirect(url)
-    
+
 
 class TaskPassesTestMixin(UserPassesTestMixin):
     def test_func(self):

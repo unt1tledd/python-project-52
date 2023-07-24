@@ -28,7 +28,6 @@ class UpdateStatusView(NewLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'statuses/update.html'
     success_url = reverse_lazy('statuses')
     success_message = _('Status successfully updated')
-    
 
 
 class DeleteStatusView(NewLoginRequiredMixin, SuccessMessageMixin, DeleteView):
@@ -36,7 +35,7 @@ class DeleteStatusView(NewLoginRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = 'statuses/delete.html'
     success_url = reverse_lazy('statuses')
     success_message = _('Status successfully deleted')
-    
+
     def post(self, request, *args, **kwargs):
         if self.get_object().task_set.count():
             messages.warning(self.request,

@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import dj_database_url
 import rollbar
 
 
@@ -130,6 +129,7 @@ ROLLBAR = {
     'code_version': '1.0',
     'root': BASE_DIR,
 }
+rollbar.init(**ROLLBAR)
 
 
 # Internationalization
@@ -157,7 +157,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL =  '/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'users.CustomUser'
 FIXTURE_DIRS = ['fixtures']

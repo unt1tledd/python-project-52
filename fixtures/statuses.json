@@ -1,0 +1,26 @@
+[
+    {
+        "model": "statuses.Status",
+        "pk": 1,
+        "fields": {
+            "name": "nice",
+            "created_at": "2023-07-24 19:38:32.665412"
+        }
+    },
+    {
+        "model": "statuses.Status",
+        "pk": 2,
+        "fields": {
+            "name": "bad",
+            "created_at": "2023-07-24 19:38:32.665412"
+        }
+    },
+    {
+        "model": "statuses.Status",
+        "pk": 3,
+        "fields": {
+            "name": "ice",
+            "created_at": "2023-07-24 19:38:32.665412"
+        }
+    }
+]

@@ -28,7 +28,6 @@ class UpdateLabelView(SuccessMessageMixin, UpdateView, NewLoginRequiredMixin):
     template_name = 'labels/update.html'
     success_url = reverse_lazy('labels')
     success_message = _('Label successfully updated')
-    
 
 
 class DeleteLabelView(SuccessMessageMixin, DeleteView, NewLoginRequiredMixin):
@@ -36,7 +35,7 @@ class DeleteLabelView(SuccessMessageMixin, DeleteView, NewLoginRequiredMixin):
     template_name = 'labels/delete.html'
     success_url = reverse_lazy('labels')
     success_message = _('Label successfully deleted')
-    
+
     def post(self, request, *args, **kwargs):
         if self.get_object().task_set.count():
             messages.warning(self.request,

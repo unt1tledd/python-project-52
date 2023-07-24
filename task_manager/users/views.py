@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib import messages
 from .models import CustomUser
 from django.contrib.messages.views import SuccessMessageMixin
@@ -17,7 +17,6 @@ class RegisterUser(SuccessMessageMixin, CreateView):
     template_name = 'users/register.html'
     success_url = reverse_lazy('login')
     success_message = _('User successfully registered')
-
 
 
 class UserListView(ListView):
@@ -42,7 +41,7 @@ class DeleteUserView(UserPermissionMixin, NewLoginRequiredMixin, SuccessMessageM
     template_name = 'users/delete.html'
     success_url = reverse_lazy('users')
     success_message = _('User successfully deleted')
-        
+
     def post(self, request, *args, **kwargs):
         self_id = self.kwargs['pk']
         if Task.objects.filter(
