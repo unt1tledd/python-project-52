@@ -26,3 +26,6 @@ install:
 	@poetry install
 
 build: install migrate
+
+test-coverage:
+	poetry run pytest --cov=gendiff --cov-report xml
