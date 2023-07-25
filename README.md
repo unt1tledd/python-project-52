@@ -1,5 +1,5 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/unt1tledd/python-project-52/workflows/hexlet-check/badge.svg)](https://github.com/unt1tledd/python-project-52/actions) <a href="https://codeclimate.com/github/unt1tledd/python-project-52/maintainability"><img src="https://api.codeclimate.com/v1/badges/0efd865ea292a2d9f57e/maintainability" /></a> <a href="https://codeclimate.com/github/unt1tledd/python-project-52/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0efd865ea292a2d9f57e/test_coverage" /></a>
+[![Actions Status](https://github.com/unt1tledd/python-project-52/workflows/hexlet-check/badge.svg)](https://github.com/unt1tledd/python-project-52/actions) <a href="https://codeclimate.com/github/unt1tledd/python-project-52/maintainability"><img src="https://api.codeclimate.com/v1/badges/0efd865ea292a2d9f57e/maintainability" /></a> <a href="https://codeclimate.com/github/unt1tledd/python-project-52/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0efd865ea292a2d9f57e/test_coverage" /></a> [![CI check](https://github.com/unt1tledd/python-project-83/actions/workflows/main.yaml/badge.svg)](https://github.com/unt1tledd/python-project-83/actions/workflows/main.yaml)
 
 # Task Manager <a href='https://task-manager-g6dq.onrender.com'>Live Demo</a>
 
