@@ -7,19 +7,19 @@ lint:
 	
 MANAGE := poetry run python manage.py
 
+install:
+	@poetry install
+
 migrate:
 	 @$(MANAGE) migrate
 
 migrations:
 	@$(MANAGE) makemigrations
 
+build: install migrate
+
 test:
 	 poetry run python manage.py test
-
-install: .env
-	@poetry install
-
-build: install migrate
 
 test-coverage:
 	poetry run coverage run --source='.' manage.py test
