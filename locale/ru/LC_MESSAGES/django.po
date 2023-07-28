@@ -290,7 +290,7 @@ msgstr "Полное имя"
 
 #: task_manager/templates/users/register.html:8
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
 
 #: task_manager/users/views.py:19
 msgid "User successfully registered"
