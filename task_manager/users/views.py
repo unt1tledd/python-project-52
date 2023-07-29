@@ -8,7 +8,7 @@ from task_manager.tasks.models import Task
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from task_manager.right_user import NewLoginRequiredMixin, UserPermissionMixin
+from task_manager.mixin import NewLoginRequiredMixin, UserPermissionMixin
 
 
 class RegisterUser(SuccessMessageMixin, CreateView):
@@ -28,7 +28,7 @@ class UserListView(ListView):
                      }
 
 
-class UpdateUserView(UserPermissionMixin, NewLoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class UpdateUserView(NewLoginRequiredMixin, UserPermissionMixin, SuccessMessageMixin, UpdateView):
     model = CustomUser
     form_class = CustomUserCreationForm
     template_name = 'users/update.html'
@@ -36,7 +36,7 @@ class UpdateUserView(UserPermissionMixin, NewLoginRequiredMixin, SuccessMessageM
     success_message = _('User successfully updated')
 
 
-class DeleteUserView(UserPermissionMixin, NewLoginRequiredMixin, SuccessMessageMixin, DeleteView):
+class DeleteUserView(NewLoginRequiredMixin, UserPermissionMixin, SuccessMessageMixin, DeleteView):
     model = CustomUser
     template_name = 'users/delete.html'
     success_url = reverse_lazy('users')

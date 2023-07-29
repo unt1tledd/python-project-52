@@ -6,7 +6,7 @@ from task_manager.tasks.filter import TaskFilter
 from task_manager.tasks.forms import TaskForm
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.utils.translation import gettext_lazy as _
-from task_manager.right_user import NewLoginRequiredMixin, TaskPassesTestMixin
+from task_manager.mixin import NewLoginRequiredMixin, TaskPassesTestMixin
 
 
 class TaskListView(FilterView):

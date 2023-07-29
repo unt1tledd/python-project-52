@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from task_manager.statuses.forms import StatusForm
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.utils.translation import gettext_lazy as _
-from task_manager.right_user import NewLoginRequiredMixin
+from task_manager.mixin import NewLoginRequiredMixin
 
 
 def index(request):
