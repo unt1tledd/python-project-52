@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from django.forms import TextInput, PasswordInput, ModelForm, CharField
-from task_manager.users.models import CustomUser
+from django.forms import TextInput, PasswordInput
 from django.core.exceptions import ValidationError
 
 
@@ -41,7 +40,7 @@ class CustomUserCreationForm(UserCreationForm):
             }),
         }
         
-    def clean_username(self):
+        def clean_username(self):
             username = self.cleaned_data.get("username")
             current_user_id = self.instance.id
 

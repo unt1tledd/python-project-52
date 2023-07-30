@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import rollbar
 import dj_database_url
 from django.utils.translation import gettext_lazy as _
+import rollbar
 
 
 load_dotenv()
@@ -125,11 +125,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ROLLBAR = {
     'access_token': os.environ.get('ROLLBAR_ACCESS_TOKEN',),
-    'environment': 'production',
+    'environment': 'development' if DEBUG else 'production',
     'code_version': '1.0',
     'root': BASE_DIR,
 }
-
+rollbar.init(**ROLLBAR)
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
