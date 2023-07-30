@@ -18,10 +18,10 @@ class TestUser(TestCase):
         self.login = reverse_lazy('login')
         self.user1 = get_user_model().objects.get(pk=1)
         self.user2 = get_user_model().objects.get(pk=2)
-        self.upd_user1 = reverse_lazy('update', kwargs={'pk': 1})
-        self.del_user1 = reverse_lazy('delete', kwargs={'pk': 1})
-        self.upd_user2 = reverse_lazy('update', kwargs={'pk': 2})
-        self.del_user2 = reverse_lazy('delete', kwargs={'pk': 2})
+        self.upd_user1 = reverse_lazy('update_user', kwargs={'pk': 1})
+        self.del_user1 = reverse_lazy('delete_user', kwargs={'pk': 1})
+        self.upd_user2 = reverse_lazy('update_user', kwargs={'pk': 2})
+        self.del_user2 = reverse_lazy('delete_user', kwargs={'pk': 2})
         with open(os.path.join('fixtures', 'test_user.json')) as f:
             self.test_user = json.load(f)
 

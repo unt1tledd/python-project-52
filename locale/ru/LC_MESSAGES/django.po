@@ -140,9 +140,8 @@ msgstr "Регистрация"
 #: task_manager/templates/labels/create.html:8
 #: task_manager/templates/statuses/create.html:8
 #: task_manager/templates/tasks/create.html:8
-#: task_manager/templates/users/update.html:8
-msgid "Save"
-msgstr "Сохранить"
+msgid "Create"
+msgstr "Cоздать"
 
 #: task_manager/templates/labels/delete.html:4
 msgid "Deletion label"
