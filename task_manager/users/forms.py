@@ -40,24 +40,26 @@ class CustomUserCreationForm(UserCreationForm):
             }),
         }
         
-        def clean_username(self):
-            username = self.cleaned_data.get("username")
-            current_user_id = self.instance.id
+    
+    def clean_username(self):
+        username = self.cleaned_data.get("username")
+        current_user_id = self.instance.id
 
-            if username:
-                user_exists = self._meta.model.objects.filter(
-                    username__iexact=username
-                ).exclude(id=current_user_id).exists()
+        if username:
+            user_exists = self._meta.model.objects.filter(
+                username__iexact=username
+            ).exclude(id=current_user_id).exists()
 
-                if user_exists:
-                    self._update_errors(
-                        ValidationError(
-                            {
-                                "username": self.instance.unique_error_message(
-                                    self._meta.model, ["username"]
-                                )
-                            }
-                        )
+            if user_exists:
+                self._update_errors(
+                    ValidationError(
+                        {
+                            "username": self.instance.unique_error_message(
+                                self._meta.model, ["username"]
+                            )
+                        }
                     )
-                else:
-                    return username
+                )
+            else:
+                return username
+
