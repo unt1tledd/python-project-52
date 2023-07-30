@@ -20,9 +20,9 @@
                 <td>{{ user.username }}</td>
                 <td>{{ user.first_name }} {{ user.last_name }}</td>
                 <td>{{ user.date_joined }}</td>
-                <td><a href="{% url 'update' user.pk %}">{% translate 'Update' %}</a>
+                <td><a href="{% url 'update_user' user.pk %}">{% translate 'Update' %}</a>
                     <br>
-                    <a href="{% url 'delete' user.pk %}">{% translate 'Delete' %}</a>
+                    <a href="{% url 'delete_user' user.pk %}">{% translate 'Delete' %}</a>
                 </td>
             </tr>
             {% endfor %}

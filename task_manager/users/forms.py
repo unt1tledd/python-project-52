@@ -39,8 +39,7 @@ class CustomUserCreationForm(UserCreationForm):
                 'maxlength': '150'
             }),
         }
-        
-    
+
     def clean_username(self):
         username = self.cleaned_data.get("username")
         current_user_id = self.instance.id
@@ -62,4 +61,3 @@ class CustomUserCreationForm(UserCreationForm):
                 )
             else:
                 return username
-
