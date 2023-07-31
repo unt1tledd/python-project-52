@@ -147,7 +147,7 @@ msgstr "Cоздать"
 msgid "Deletion label"
 msgstr "Удаление метки"
 
-#: task_manager/templates/users/delete.html:6
+#: task_manager/templates/users/update.html:6
 msgid "Updation label"
 msgstr "Изменение метки"
 
@@ -205,6 +205,7 @@ msgstr "Удаление статуса"
 msgid "Updation status"
 msgstr "Изменение статуса"
 
+#: task_manager/templates/statuses/create.html:6
 #: task_manager/templates/statuses/statuses.html:5
 msgid "Create Status"
 msgstr "Создать статус"
@@ -259,6 +260,7 @@ msgstr "Описание"
 msgid "Labels:"
 msgstr "Метки:"
 
+#: task_manager/templates/tasks/create.html:6
 #: task_manager/templates/tasks/tasks.html:6
 msgid "Create Task"
 msgstr "Cоздать задачу"
