@@ -9,7 +9,7 @@ class StatusForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Имя',
+                'placeholder': 'Введите имя статуса',
                 'maxlength': '100'
             })
         }
