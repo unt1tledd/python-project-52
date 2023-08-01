@@ -2,9 +2,9 @@
 {% load i18n %}
 {% block content %}
 <h1 class="my-4">{% translate 'Deletion status' %}</h1>
-<p>{% trans "Are you sure you want to delete" %} <font color='blue'>{{ status.name }}</font>?<p>
+<p>{% translate "Are you sure you want to delete" %} <font color='blue'>{{ status.name }}</font>?<p>
 <form action="{% url 'delete_status' status.id %}" method="post">
     {% csrf_token %}
-    <input class="btn btn-danger" type="submit" value="Удалить">
+    <input class="btn btn-danger" type="submit" value="{% translate 'Yes, delete' %}">
 </form>
 {% endblock %}
