@@ -20,7 +20,8 @@ class UserPermissionMixin(UserPassesTestMixin):
         return self.request.user.id == user.id
 
     def handle_no_permission(self):
-        messages.error(self.request, _("You don't have permissions to update and delete another user"))
+        messages.error(self.request,
+                       _("You don't have permissions to update and delete another user"))
         url = reverse_lazy('users')
         return redirect(url)
 
