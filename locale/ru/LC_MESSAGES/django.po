@@ -101,6 +101,7 @@ msgstr "Задача успешно изменена"
 msgid "Task successfully deleted"
 msgstr "Задача успешно удалена"
 
+#: task_manager/templates/task_manager/index.html:6
 #: task_manager/templates/base.html:10 task_manager/templates/base.html:20
 msgid "Task Manager"
 msgstr "Менеджер задач"
@@ -210,17 +211,14 @@ msgstr "Изменение статуса"
 msgid "Create Status"
 msgstr "Создать статус"
 
-#: task_manager/templates/task_manager/index.html:6
-msgid "Hi from Hexlet!"
-msgstr "Привет от Хекслета!"
-
 #: task_manager/templates/task_manager/index.html:7
-msgid "Practical programming courses"
-msgstr "Практические курсы программирования"
+msgid "Website to help you organize your work"
+msgstr "Веб-сайт, который поможет вам организовать вашу работу"
 
-#: task_manager/templates/task_manager/index.html:9
-msgid "learn more"
-msgstr "Узнать больше"
+#: task_manager/templates/task_manager/index.html:11
+#: task_manager/templates/task_manager/index.html:13
+msgid "begin work"
+msgstr "Начать работу"
 
 #: task_manager/templates/task_manager/login.html:6
 msgid "Log in"
