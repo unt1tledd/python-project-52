@@ -1,3 +1,4 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,8 +93,9 @@
         <h1>Регистрация</h1>
         <input type='text' placeholder='Имя' id="first_name">
         <input type='text' placeholder='Фамилия' id="last_name">
-        <input type='text' placeholder='Никнейм' id="user_name">
-        <input type='text' placeholder='Пароль' id="password">
+        <input type='text' placeholder='Никнейм' id="username">
+        <input type='text' placeholder='Пароль' id="password1">
+        <input type='text' placeholder='Подтверждение пароля' id="password2">
         <div id='error'></div>
         <button id="ready">Готово!</button>
     </form>
@@ -113,10 +115,15 @@
             document.getElementById('error').innerText =  '';
             let first_name = document.getElementById('first_name').value;
             let last_name= document.getElementById('last_name').value;
-            let username = document.getElementById('user_name').value;
-            let password = document.getElementById('password').value;
-            if(password < 8) {
-                document.getElementById('error').innerText = 'Пароль слишком короткий. Длина должна быть больше 8';
+            let username = document.getElementById('username').value;
+            let password1 = document.getElementById('password1').value;
+            let password2 = document.getElementById('password2').value;
+            if(password1 < 8 and password1==password2) {
+                document.getElementById('error').innerText = 'Пароль слишком короткий. Длина должна быть не меньше 8';
+                return;
+            }
+            if(password1!=password) {
+                document.getElementById('error').innerText = 'Пароли не совпадают'
                 return;
             }
             
