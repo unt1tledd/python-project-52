@@ -95,7 +95,7 @@
         <input type='text' placeholder='Никнейм' id="user_name">
         <input type='text' placeholder='Пароль' id="password">
         <div id='error'></div>
-        <buttom id="ready">Готово!</button>
+        <button id="ready">Готово!</button>
     </form>
 </body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -107,7 +107,6 @@
         sign.addEventListener('click', () => {
           document.getElementById('main').style.display = 'none';
           document.getElementById('form').style.display = 'block';
-          document.getElementById('first_name').value = tg.initDataUnsafe.first_name
         });
         
         ready.addEventListener('click', () => {
@@ -121,7 +120,7 @@
                 return;
             }
             
-            tg.sendData('Имя:', first_name, "Фамилия:", last_name, 'Никнейм:', username);
+            tg.sendData('Имя: ' + first_name + "\nФамилия: " + last_name + '\nНикнейм: ' + username);
             
             tg.close();
         });
