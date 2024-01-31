@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'tg_bot/file.html')
+    return render(request, 'tgbot/file.html')
