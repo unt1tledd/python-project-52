@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shop</title>
+    <title>Task Manager</title>
     <style>
         * {
             margin: 0;
@@ -27,6 +27,7 @@
         }
         
         h1 {
+            text-align: center;
             margin-top: 50px;
             margin-bottom: 10px;
         }
@@ -37,14 +38,16 @@
         }
         
         p {
+            text-align: center;
             width: 350px;
             margin: 0 auto;
         }
         
         button {
+            display: block;
             border: 0;
             border-radius: 5px;
-            margin-top: 50px;
+            margin: 0 auto;
             height: 60px;
             width: 200px;
             font-size: 20px;
@@ -61,7 +64,7 @@
         
         #form {
             display: none;
-            text-aligh: center
+            text-align: center
         }
         
         input {
@@ -83,15 +86,44 @@
     <div id="main">
         <h1>Менеджер задач</h1>
         <p>Здесь вы можете создавать задачи, не заходя на сайт</p>
-        <button id="singin">Зарегистрироваться</button>
+        <button id="signin">Зарегистрироваться</button>
     </div>
     <form id='form'>
+        <h1>Регистрация</h1>
         <input type='text' placeholder='Имя' id="first_name">
         <input type='text' placeholder='Фамилия' id="last_name">
         <input type='text' placeholder='Никнейм' id="user_name">
         <input type='text' placeholder='Пароль' id="password">
+        <div id='error'></div>
         <buttom id="ready">Готово!</button>
     </form>
 </body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg=window.Telegram.WebApp;
+        let sign=document.getElementById("signin");
+        let ready=document.getElementById("ready");
+        
+        sign.addEventListener('click', () => {
+          document.getElementById('main').style.display = 'none';
+          document.getElementById('form').style.display = 'block';
+          document.getElementById('first_name').value = tg.initDataUnsafe.first_name
+        });
+        
+        ready.addEventListener('click', () => {
+            document.getElementById('error').innerText =  '';
+            let first_name = document.getElementById('first_name').value;
+            let last_name= document.getElementById('last_name').value;
+            let username = document.getElementById('user_name').value;
+            let password = document.getElementById('password').value;
+            if(password < 8) {
+                document.getElementById('error').innerText = 'Пароль слишком короткий. Длина должна быть больше 8';
+                return;
+            }
+            
+            tg.sendData('Имя:', first_name, "Фамилия:", last_name, 'Никнейм:', username);
+            
+            tg.close();
+        });
+    </script>
 </html>
