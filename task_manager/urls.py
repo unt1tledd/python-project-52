@@ -28,5 +28,4 @@ urlpatterns = [
     path('statuses/', include('task_manager.statuses.urls'), name='statuses'),
     path('tasks/', include('task_manager.tasks.urls'), name='tasks'),
     path('labels/', include('task_manager.labels.urls'), name='labels'),
-    path('tgbot/', include('task_manager.tg_bot.urls'), name='tgbot')
 ]
